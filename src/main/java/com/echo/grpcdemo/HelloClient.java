@@ -19,11 +19,11 @@ public class HelloClient {
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost",18081)
             .usePlaintext(true)
             .build();
-        com.echo.grpcdemo.HelloGrpc.HelloBlockingStub blockingStub = com.echo.grpcdemo.HelloGrpc.newBlockingStub(channel);
+        HelloGrpc.HelloBlockingStub blockingStub = HelloGrpc.newBlockingStub(channel);
         String name = "foo";
         log.info("Will try to greet " + name + " ...");
-        com.echo.grpcdemo.HelloRequest request = com.echo.grpcdemo.HelloRequest.newBuilder().setName(name).build();
-        com.echo.grpcdemo.HelloReply response;
+        HelloRequest request = HelloRequest.newBuilder().setName(name).build();
+        HelloReply response;
         try {
             response = blockingStub.sayHello(request);
         } catch (StatusRuntimeException e) {

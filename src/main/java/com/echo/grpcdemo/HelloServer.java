@@ -22,8 +22,8 @@ public class HelloServer {
     static class HelloImpl extends HelloImplBase {
 
         @Override
-        public void sayHello(com.echo.grpcdemo.HelloRequest req, StreamObserver<com.echo.grpcdemo.HelloReply> responseObserver) {
-            com.echo.grpcdemo.HelloReply reply = com.echo.grpcdemo.HelloReply.newBuilder().setMessage("Hello " + req.getName()).build();
+        public void sayHello(HelloRequest req, StreamObserver<HelloReply> responseObserver) {
+            HelloReply reply = HelloReply.newBuilder().setMessage("Hello " + req.getName()).build();
             responseObserver.onNext(reply);
             responseObserver.onCompleted();
         }
