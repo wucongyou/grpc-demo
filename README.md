@@ -4,7 +4,7 @@ A grpc demo impl in Java programming language.
 ## Quick Start
 ```
 # run server
-mvn -e exec:java -Dexec.mainClass=com.echo.exercise.grpc.HelloServer
+mvn -e exec:java -Dexec.mainClass=com.echo.grpcdemo.HelloServer
 # run client
-mvn -e exec:java -Dexec.mainClass=com.echo.exercise.grpc.HelloClient
+mvn -e exec:java -Dexec.mainClass=com.echo.grpcdemo.HelloClient
 ```
